@@ -1,0 +1,21 @@
+.top-navigation {
+  width: 100vw;
+  height: 3.75rem;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid lightslategray;
+
+  &__left,
+  &__right {
+    display: flex;
+    align-items: center;
+    &:first-child {
+      padding-left: 8px;
+    }
+    &:last-child {
+      padding-right: 8px;
+    }
+  }
+}
