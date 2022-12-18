@@ -6,6 +6,8 @@
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid lightslategray;
+  z-index: 1;
+  background-color: white;
 
   &__left,
   &__right {

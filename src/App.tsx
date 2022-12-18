@@ -1,5 +1,8 @@
-import { TopNavigation } from "./components/TopNavigation/TopNavigation"
 import { ImageSection } from "./components/ImageSection/ImageSection"
+import { SiteSection } from "./components/SiteSection/SiteSection"
+import { TopNavigation } from "./components/TopNavigation/TopNavigation"
+import { Intro } from "./content/Intro/Intro"
+import { SplitOneLeft, SplitOneRight } from "./content/SplitOne"
 
 import "./App.css"
 
@@ -8,6 +11,13 @@ function App() {
     <>
       <TopNavigation />
       <ImageSection />
+      <SiteSection>
+        <Intro />
+      </SiteSection>
+      <SiteSection isSplit>
+        <SplitOneLeft />
+        <SplitOneRight />
+      </SiteSection>
     </>
   )
 }
