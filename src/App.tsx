@@ -3,6 +3,7 @@ import { SiteSection } from "./components/SiteSection/SiteSection"
 import { TopNavigation } from "./components/TopNavigation/TopNavigation"
 import { Intro } from "./content/Intro/Intro"
 import { SplitOneLeft, SplitOneRight } from "./content/SplitOne"
+import { WideOne } from "./content/WideOne/WideOne"
 
 import "./App.css"
 
@@ -17,6 +18,9 @@ function App() {
       <SiteSection isSplit>
         <SplitOneLeft />
         <SplitOneRight />
+      </SiteSection>
+      <SiteSection isSplit={false}>
+        <WideOne />
       </SiteSection>
     </>
   )

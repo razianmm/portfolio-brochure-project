@@ -1,7 +1,7 @@
 .split-one--left,
 .split-one--right {
   flex-grow: 1;
-  height: 15rem;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,6 +17,11 @@
   justify-content: center;
   align-items: center;
   box-shadow: 5px 10px 8px rgba(128, 128, 128, 0.613);
+  &.active {
+    animation: fadeIn;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+  }
 }
 
 .split-one--right div {
@@ -28,12 +33,11 @@
   justify-content: center;
   align-items: center;
   box-shadow: 5px 10px 8px rgba(128, 128, 128, 0.613);
-}
-
-.active {
-  animation: fadeIn;
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
+  &.active {
+    animation: fadeIn;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+  }
 }
 
 @keyframes fadeIn {
