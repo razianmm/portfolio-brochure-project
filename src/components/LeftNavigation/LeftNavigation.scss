@@ -1,19 +1,20 @@
 .left-navigation {
-  position: absolute;
+  position: fixed;
   background-color: lightgreen;
   height: 100%;
   min-width: 10rem;
   padding: 1rem;
+  margin-top: 1px;
 
   transform: translateX(-100%);
   z-index: 5;
 
   &.active {
-    animation: slideIn 0.3s ease-out forwards;
+    animation: slideInLeftNav 0.3s ease-out forwards;
   }
 
   &.hidden {
-    animation: slideOut 0.3s ease-out forwards;
+    animation: slideOutLeftNav 0.3s ease-out forwards;
   }
 
   & ul li {
@@ -24,13 +25,13 @@
 
 // TO-DO: Make these global SCSS variables
 
-@keyframes slideIn {
+@keyframes slideInLeftNav {
   100% {
     transform: translateX(0%);
   }
 }
 
-@keyframes slideOut {
+@keyframes slideOutLeftNav {
   0% {
     transform: translateX(0%);
   }

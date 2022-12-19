@@ -1,0 +1,17 @@
+.scroll-to-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  background-color: lightcyan;
+}
+
+.scroll-to-top__button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -5,5 +5,5 @@ Things to include in the site:
 - A Left Navigation
 - Mobile styles
 - Full accessibility
-- Links to site resources -- configs, source, Storybook
+- Links to site resources -- configs, source, Storybook?
 - Make sure to set up Github repo with actions, etc.

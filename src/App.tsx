@@ -5,6 +5,7 @@ import { Intro } from "./content/Intro/Intro"
 import { SplitOneLeft, SplitOneRight } from "./content/SplitOne"
 import { WideOne } from "./content/WideOne/WideOne"
 import { LeftNavigation } from "./components/LeftNavigation/LeftNavigation"
+import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop"
 
 import "./App.css"
 import { useState } from "react"
@@ -27,6 +28,7 @@ const App = () => {
       <SiteSection isSplit={false}>
         <WideOne />
       </SiteSection>
+      <ScrollToTop />
     </div>
   )
 }
