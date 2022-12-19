@@ -6,3 +6,4 @@ Things to include in the site:
 - Mobile styles
 - Full accessibility
 - Links to site resources -- configs, source, Storybook
+- Make sure to set up Github repo with actions, etc.

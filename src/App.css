@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+.layout__container {
+  position: relative;
+}
+
 .App {
   text-align: center;
 }
