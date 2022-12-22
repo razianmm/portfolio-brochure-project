@@ -7,3 +7,4 @@ Things to include in the site:
 - Full accessibility
 - Links to site resources -- configs, source
 - Make sure to set up Github repo with actions, etc.
+- Testing
