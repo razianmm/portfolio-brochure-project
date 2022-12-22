@@ -1,4 +1,5 @@
 import "../../../neo-icons.css"
+import "./TopNavigationMenuToggle.scss"
 
 export const TopNavigationMenuToggle = ({
   isActive,
@@ -9,7 +10,7 @@ export const TopNavigationMenuToggle = ({
 }) => {
   return (
     <button
-      className="neo-icon-menu"
+      className="top-nav__toggle-button neo-icon-menu"
       aria-label="Toggle menu button"
       onClick={() => toggleLeftNav(!isActive)}
     ></button>

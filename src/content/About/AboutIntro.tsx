@@ -1,6 +1,6 @@
-import "./AboutIntro.scss"
+import { Design } from "./Design/AboutDesign"
 
-import { Design } from "./Design/Design"
+import "./AboutIntro.scss"
 
 export const AboutIntro = () => {
   return (
@@ -15,13 +15,7 @@ export const AboutIntro = () => {
         at the Github link.
       </p>
       <p>Below is a list of the most salient features of the site:</p>
-      <ul className="about__links">
-        <li>Design</li>
-        <li>Accessibility</li>
-        <li>Tooling</li>
-        <li>Testing</li>
-        <li>CI/CD</li>
-      </ul>
+
       <Design />
     </>
   )
