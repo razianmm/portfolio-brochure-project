@@ -24,7 +24,7 @@ export const SplitOneRight = () => {
   return (
     <div className="split-one--right">
       <div className={clsx(isIntersecting && "active")} ref={ref}>
-        <a className="split-one--right__link" href="/table">
+        <a className="split-one--right__link" href="/about">
           <h2>Visit the About page</h2>
         </a>
       </div>
