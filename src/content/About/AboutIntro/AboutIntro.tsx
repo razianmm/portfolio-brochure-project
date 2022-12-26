@@ -1,5 +1,3 @@
-import { Design } from "./Design/AboutDesign"
-
 import "./AboutIntro.scss"
 
 export const AboutIntro = () => {
@@ -15,8 +13,6 @@ export const AboutIntro = () => {
         at the Github link.
       </p>
       <p>Below is a list of the most salient features of the site:</p>
-
-      <Design />
     </>
   )
 }

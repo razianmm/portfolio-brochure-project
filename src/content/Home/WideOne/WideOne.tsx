@@ -1,7 +1,5 @@
 import clsx from "clsx"
-import { useEffect, useState } from "react"
-
-import { useTriggerOnScroll } from "../../utils/hooks"
+import { useTriggerOnScroll } from "../../../utils"
 
 import "./WideOne.scss"
 

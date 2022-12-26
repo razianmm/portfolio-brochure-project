@@ -1,4 +1,4 @@
-export const Design = () => {
+export const AboutDesign = () => {
   return (
     <>
       <h3>Design</h3>

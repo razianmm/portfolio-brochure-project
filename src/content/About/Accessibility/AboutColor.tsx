@@ -1,4 +1,4 @@
-export const Color = () => {
+export const AboutColor = () => {
   return (
     <>
       <h3>Color</h3>

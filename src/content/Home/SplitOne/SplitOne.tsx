@@ -1,6 +1,6 @@
 import clsx from "clsx"
 
-import { useTriggerOnScroll } from "../../utils/hooks"
+import { useTriggerOnScroll } from "../../../utils/hooks"
 
 import "./SplitOne.scss"
 

@@ -1,5 +1,6 @@
-import "./LeftNavigation.scss"
 import clsx from "clsx"
+
+import "./LeftNavigation.scss"
 
 export const LeftNavigation = ({
   isActive,
@@ -11,6 +12,9 @@ export const LeftNavigation = ({
       <ul>
         <li>
           <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/table">Table</a>
         </li>
         <li>
           <a href="/about">About This Site</a>
