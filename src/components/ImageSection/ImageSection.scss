@@ -1,3 +1,7 @@
+.image-section {
+  position: relative;
+}
+
 .image-section--splash {
   width: 100%;
   height: 100vh;
@@ -23,30 +27,18 @@
   &.two {
     z-index: 5;
     animation-delay: 1.1s;
-    // &::before {
-    //   color: rgba(54, 51, 51, 0.9);
-    // }
   }
   &.three {
     z-index: 4;
     animation-delay: 1.2s;
-    // &::before {
-    //   color: rgba(54, 51, 51, 0.9);
-    // }
   }
   &.four {
     z-index: 3;
     animation-delay: 1.3s;
-    // &::before {
-    //   color: rgba(54, 51, 51, 0.9);
-    // }
   }
   &.five {
     z-index: 2;
     animation-delay: 1.4s;
-    // &::before {
-    //   color: rgba(54, 51, 51, 0.9);
-    // }
   }
 }
 

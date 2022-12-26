@@ -1,25 +1,37 @@
+import clsx from "clsx"
+
 import "./ImageSection.scss"
 
-export const ImageSection = () => {
+export const ImageSection = ({
+  source,
+  isSplash,
+}: {
+  source: string
+  isSplash?: boolean
+}) => {
   return (
-    <div style={{ position: "relative" }}>
+    <div className="image-section">
       <img
-        src="/images/splash-image-1.jpg"
-        className="image-section--splash"
+        src={source}
+        className={isSplash ? "image-section--splash" : ""}
         aria-label="Placeholder label"
       ></img>
-      <button
-        className="image-section__scroll-down neo-icon-chevron-down"
-        aria-label="Scroll down"
-      ></button>
-      <button
-        className="image-section__scroll-down two neo-icon-chevron-down"
-        aria-label="Scroll down"
-      ></button>
-      <button
-        className="image-section__scroll-down three neo-icon-chevron-down"
-        aria-label="Scroll down"
-      ></button>
+      {isSplash && (
+        <>
+          <button
+            className="image-section__scroll-down neo-icon-chevron-down"
+            aria-label="Scroll down"
+          ></button>
+          <button
+            className="image-section__scroll-down two neo-icon-chevron-down"
+            aria-label="Scroll down"
+          ></button>
+          <button
+            className="image-section__scroll-down three neo-icon-chevron-down"
+            aria-label="Scroll down"
+          ></button>
+        </>
+      )}
     </div>
   )
 }

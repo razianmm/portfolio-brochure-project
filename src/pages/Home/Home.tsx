@@ -10,7 +10,7 @@ import {
 export const Home = () => {
   return (
     <Layout>
-      <ImageSection />
+      <ImageSection isSplash source="/images/splash-image-1.jpg" />
       <SiteSection>
         <HomeIntro />
       </SiteSection>
