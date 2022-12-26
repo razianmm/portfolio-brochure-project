@@ -9,16 +9,9 @@ export const WideOne = () => {
   return (
     <div className="wide-one">
       <div ref={ref}>
-        <h2 className={clsx(isIntersecting && "active")}>Left</h2>
-        <p className={clsx(isIntersecting && "active")} style={{ top: "15%" }}>
-          Line One
-        </p>
-        <p className={clsx(isIntersecting && "active")} style={{ top: "25%" }}>
-          Line Two
-        </p>
-        <p className={clsx(isIntersecting && "active")} style={{ top: "35%" }}>
-          Line Three
-        </p>
+        <h3 className={clsx(isIntersecting && "active")}>Responsive design</h3>
+        <h3 className={clsx(isIntersecting && "active")}>Accessible design</h3>
+        <h3 className={clsx(isIntersecting && "active")}>Testing</h3>
       </div>
     </div>
   )

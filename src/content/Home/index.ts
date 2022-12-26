@@ -1,4 +1,4 @@
-import { HomeIntro } from "./Intro"
+import { HomeIntro } from "./HomeIntro"
 
 import { SplitOneLeft, SplitOneRight } from "./SplitOne"
 

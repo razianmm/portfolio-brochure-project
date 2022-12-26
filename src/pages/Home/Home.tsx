@@ -11,16 +11,20 @@ export const Home = () => {
   return (
     <Layout>
       <ImageSection isSplash source="/images/splash-image-1.jpg" />
+
       <SiteSection>
         <HomeIntro />
       </SiteSection>
+
+      <SiteSection>
+        <WideOne />
+      </SiteSection>
+
       <SiteSection isSplit>
         <SplitOneLeft />
         <SplitOneRight />
       </SiteSection>
-      <SiteSection>
-        <WideOne />
-      </SiteSection>
+
       <ScrollToTop />
     </Layout>
   )

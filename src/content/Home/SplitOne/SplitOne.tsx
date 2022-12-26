@@ -10,7 +10,9 @@ export const SplitOneLeft = () => {
   return (
     <div className="split-one--left">
       <div className={clsx(isIntersecting && "active")} ref={ref}>
-        <h2>Left</h2>
+        <a className="split-one--left__link" href="/table">
+          <h2>Visit the Table page</h2>
+        </a>
       </div>
     </div>
   )
@@ -22,7 +24,9 @@ export const SplitOneRight = () => {
   return (
     <div className="split-one--right">
       <div className={clsx(isIntersecting && "active")} ref={ref}>
-        <h2>Right</h2>
+        <a className="split-one--right__link" href="/table">
+          <h2>Visit the About page</h2>
+        </a>
       </div>
     </div>
   )

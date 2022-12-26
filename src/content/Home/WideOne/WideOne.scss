@@ -1,20 +1,18 @@
 .wide-one {
   width: 100%;
   height: 100%;
-  background-color: #437af0;
+  background-color: white;
   display: flex;
 }
 
 .wide-one div {
-  width: 5rem;
   margin-left: 5rem;
-  margin-top: 5rem;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.wide-one div h2,
-.wide-one div p {
-  position: absolute;
+.wide-one div h3 {
   transform: translateX(-100%);
   opacity: 0;
 

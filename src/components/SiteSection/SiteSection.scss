@@ -1,10 +1,12 @@
+$site-section-height: 10rem;
+
 .site-section__wrapper--split {
   display: flex;
   justify-content: space-around;
-  height: 20rem;
+  height: $site-section-height;
 }
 
 .site-section__wrapper--wide {
   width: 100%;
-  height: 20rem;
+  height: $site-section-height;
 }
