@@ -17,7 +17,9 @@ export const TopNavigation = ({
           isActive={isActive}
           toggleLeftNav={toggleLeftNav}
         />
-        <h1 className="top-navigation__left__logo">Sample Site</h1>
+        <a className="top-navigation__left__link" href="/">
+          <h1 className="top-navigation__left__logo">Sample Site</h1>
+        </a>
       </div>
       <div className="top-navigation__right">
         <TopNavigationSettings />
