@@ -6,7 +6,7 @@ export const AboutThisSite = () => {
   return (
     <Layout>
       <AboutNav />
-      <SiteSection isSplit={false}>
+      <SiteSection>
         <div style={{ marginTop: "3.75rem", padding: "3rem" }}>
           <AboutIntro />
         </div>
