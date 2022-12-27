@@ -22,7 +22,11 @@ export const LeftNavigation = ({
         <li>
           <a href="/about">About This Site</a>
         </li>
-        <li>Razian.dev portfolio</li>
+        <li>
+          <a href="https://www.razian.dev" target="_blank" rel="noreferrer">
+            Razian.dev portfolio site
+          </a>
+        </li>
       </ul>
     </div>
   )
