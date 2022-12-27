@@ -17,6 +17,9 @@ export const LeftNavigation = ({
           <a href="/table">Table</a>
         </li>
         <li>
+          <a href="/gallery">Gallery</a>
+        </li>
+        <li>
           <a href="/about">About This Site</a>
         </li>
         <li>Razian.dev portfolio</li>

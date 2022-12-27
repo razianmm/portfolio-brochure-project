@@ -8,7 +8,7 @@ First iteration:
   - Change or otherwise allow for height to be passed in to site sections
 - Add at least two sample pages
   - Table that loads from API
-  - Item view that loads from API
+  - Item view that loads from API - use different configurations of grid
 - Mobile styles
 - Full accessibility
   - Provide settings menu to toggle features - dark mode?

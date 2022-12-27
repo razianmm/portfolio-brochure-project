@@ -1,0 +1,27 @@
+.table__intro {
+  padding: 0 3rem 1rem 3rem;
+
+  &:first-of-type {
+    padding-top: 3rem;
+  }
+
+  &:last-of-type {
+    padding-bottom: 3rem;
+  }
+}
+
+.table__wrapper {
+  padding: 3rem;
+}
+
+.table {
+  padding: 1rem;
+  border-collapse: collapse;
+  thead tr th,
+  tbody tr td {
+    text-align: left;
+    padding: 0.5rem;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+}

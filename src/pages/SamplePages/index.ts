@@ -1,3 +1,5 @@
 import { Table } from "./Table"
 
-export { Table }
+import { Gallery } from "./Gallery"
+
+export { Table, Gallery }
