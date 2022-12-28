@@ -19,5 +19,6 @@ module.exports = {
     quotes: ["error", "double", { allowTemplateLiterals: true }],
     semi: ["error", "never"],
     "react/react-in-jsx-scope": "off",
+    "react/no-unescaped-entities": 0,
   },
 }

@@ -1,3 +1,7 @@
 import { AboutDesign } from "./AboutDesign"
 
-export { AboutDesign }
+import { AboutCrossBrowserCompatibility } from "./AboutCrossBrowserCompatibility"
+
+import { AboutTable } from "./AboutTable"
+
+export { AboutDesign, AboutCrossBrowserCompatibility, AboutTable }

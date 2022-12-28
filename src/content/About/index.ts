@@ -2,8 +2,36 @@ import { AboutIntro } from "./AboutIntro"
 
 import { AboutNav } from "./AboutNav"
 
-import { AboutColor, AboutKeyboardNav } from "./Accessibility"
+import {
+  AboutColor,
+  AboutKeyboardNav,
+  AboutAnimations,
+  AboutScreenReaders,
+} from "./Accessibility"
 
-import { AboutDesign } from "./Design"
+import {
+  AboutDesign,
+  AboutCrossBrowserCompatibility,
+  AboutTable,
+} from "./Design"
 
-export { AboutIntro, AboutNav, AboutColor, AboutKeyboardNav, AboutDesign }
+import { AboutCICD } from "./CICD"
+
+import { AboutTesting } from "./Testing"
+
+import { AboutTooling } from "./Tooling"
+
+export {
+  AboutIntro,
+  AboutNav,
+  AboutColor,
+  AboutKeyboardNav,
+  AboutAnimations,
+  AboutScreenReaders,
+  AboutDesign,
+  AboutCrossBrowserCompatibility,
+  AboutTable,
+  AboutCICD,
+  AboutTooling,
+  AboutTesting,
+}

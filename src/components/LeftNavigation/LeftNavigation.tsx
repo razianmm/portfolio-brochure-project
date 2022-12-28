@@ -1,14 +1,20 @@
 import clsx from "clsx"
 
 import "./LeftNavigation.scss"
+import { RefObject } from "react"
 
 export const LeftNavigation = ({
   isActive,
+  leftNavigationRef,
 }: {
   isActive: boolean | undefined
+  leftNavigationRef: RefObject<HTMLDivElement>
 }) => {
   return (
-    <div className={clsx("left-navigation", isActive ? "active" : "hidden")}>
+    <div
+      className={clsx("left-navigation", isActive ? "active" : "hidden")}
+      ref={leftNavigationRef}
+    >
       <ul>
         <li>
           <a href="/">Home</a>
