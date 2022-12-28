@@ -1,6 +1,7 @@
 import { useState } from "react"
+
 import { SiteSection } from "../../components"
-import { AboutNav, AboutIntro, AboutDesign } from "../../content/About"
+import { AboutAccessibility, AboutDesign, AboutIntro, AboutNav } from "../../content/About"
 import { Layout } from "../../layouts"
 
 export const AboutThisSite = () => {
@@ -14,6 +15,7 @@ export const AboutThisSite = () => {
         <div style={{ marginTop: "3.75rem", padding: "3rem" }}>
           {aboutSectionToDisplay === "Intro" && <AboutIntro />}
           {aboutSectionToDisplay === "Design" && <AboutDesign />}
+          {aboutSectionToDisplay === "Accessibility" && <AboutAccessibility />}
         </div>
       </SiteSection>
     </Layout>

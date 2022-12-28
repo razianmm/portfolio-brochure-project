@@ -1,33 +1,16 @@
 import { AboutIntro } from "./AboutIntro"
-
 import { AboutNav } from "./AboutNav"
-
-import {
-  AboutColor,
-  AboutKeyboardNav,
-  AboutAnimations,
-  AboutScreenReaders,
-} from "./Accessibility"
-
-import {
-  AboutDesign,
-  AboutCrossBrowserCompatibility,
-  AboutTable,
-} from "./Design"
-
+import { AboutAccessibility } from "./Accessibility"
 import { AboutCICD } from "./CICD"
-
+import { AboutCrossBrowserCompatibility, AboutDesign, AboutResponsiveDesign, AboutTable } from "./Design"
 import { AboutTesting } from "./Testing"
-
 import { AboutTooling } from "./Tooling"
 
 export {
   AboutIntro,
   AboutNav,
-  AboutColor,
-  AboutKeyboardNav,
-  AboutAnimations,
-  AboutScreenReaders,
+  AboutAccessibility,
+  AboutResponsiveDesign,
   AboutDesign,
   AboutCrossBrowserCompatibility,
   AboutTable,

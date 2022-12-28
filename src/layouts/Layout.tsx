@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useRef, useState } from "react"
 
-import { TopNavigation, LeftNavigation } from "../components"
+import { LeftNavigation, TopNavigation } from "../components"
 
 import "./Layout.scss"
 
@@ -9,21 +9,35 @@ export const Layout = ({ children }: { children: ReactNode }) => {
 
   const leftNavigationRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    function closeLeftNavOnClickAway(event: MouseEvent) {
-      console.log(isActive)
-      console.log("Click detected")
-      console.log(event.target)
-      console.log(leftNavigationRef.current)
-      if (isActive && event.target !== leftNavigationRef.current) {
-        setIsActive(false)
-      }
+  function closeLeftNavOnClickAway(event: MouseEvent) {
+    if (isActive && event.target === leftNavigationRef.current) {
+      setIsActive(false)
     }
+  }
 
+  function handleScrollWhenNavOpen() {
+    if (isActive) {
+      window.scrollTo(0, 0)
+    }
+  }
+
+  function closeLeftNavWithEscapeKey(event: KeyboardEvent) {
+    if (isActive && event.key === "Escape") {
+      setIsActive(false)
+    }
+  }
+
+  useEffect(() => {
     document.addEventListener("click", closeLeftNavOnClickAway)
+
+    document.addEventListener("scroll", handleScrollWhenNavOpen)
+
+    document.addEventListener("keydown", closeLeftNavWithEscapeKey)
 
     return () => {
       document.removeEventListener("click", closeLeftNavOnClickAway)
+      document.removeEventListener("scroll", handleScrollWhenNavOpen)
+      document.removeEventListener("keydown", closeLeftNavWithEscapeKey)
     }
   }, [isActive])
 

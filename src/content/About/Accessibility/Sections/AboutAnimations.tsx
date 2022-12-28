@@ -8,8 +8,12 @@ export const AboutAnimations = () => {
         for the user.
       </p>
       <p>
-        Keyboard navigation can be achieved using Tab, or arrow keys, in
-        accordance with keyboard navigation guidelines for each element.
+        However, for some users, animation can cause discomfort when viewed,
+        such as motion sickness.
+      </p>
+      <p>
+        Therefore, this site provides an option to toggle animations off. In
+        addition, it also{" "}
       </p>
     </>
   )

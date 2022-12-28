@@ -10,10 +10,20 @@ export const AboutNav = ({
       <li>
         <button onClick={() => updateDisplay("Design")}>Design</button>
       </li>
-      <li>Accessibility</li>
-      <li>Tooling</li>
-      <li>Testing</li>
-      <li>CI/CD</li>
+      <li>
+        <button onClick={() => updateDisplay("Accessibility")}>
+          Accessibility
+        </button>
+      </li>
+      <li>
+        <button onClick={() => updateDisplay("Tooling")}>Tooling</button>
+      </li>
+      <li>
+        <button onClick={() => updateDisplay("Testing")}>Testing</button>
+      </li>
+      <li>
+        <button onClick={() => updateDisplay("CI/CD")}>CI/CD</button>
+      </li>
     </ul>
   )
 }
