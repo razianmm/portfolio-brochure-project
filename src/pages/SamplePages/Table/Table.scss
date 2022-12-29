@@ -17,6 +17,8 @@
 .table {
   padding: 1rem;
   border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
   thead tr th,
   tbody tr td {
     text-align: left;
