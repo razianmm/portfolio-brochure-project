@@ -1,0 +1,17 @@
+.about {
+  margin-top: 3.75rem;
+  padding: 3rem;
+
+  & h3 {
+    margin-bottom: 1rem;
+
+    &:not(:first-child) {
+      margin-top: 1rem;
+    }
+  }
+
+  & p:not(last-child) {
+    line-height: 1.8rem;
+    margin-bottom: 1rem;
+  }
+}
