@@ -14,6 +14,7 @@ First iteration:
   - Provide settings menu to toggle features - dark mode?
 - Links to site resources -- configs, source
 - Make sure to set up Github repo with actions, etc.
+- Add 404 page
 
 Second interation:
 

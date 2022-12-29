@@ -1,3 +1,5 @@
 import { AboutReactTesting } from "./AboutReactTesting"
 
-export { AboutReactTesting }
+import { AboutCypress } from "./AboutCypress"
+
+export { AboutReactTesting, AboutCypress }

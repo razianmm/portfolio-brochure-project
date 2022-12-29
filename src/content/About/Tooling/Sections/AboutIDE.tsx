@@ -9,8 +9,8 @@ export const AboutIDE = () => {
         developer's job, but also produce a more robust product overall.
       </p>
       <p>
-        Therefore it pays to have an idea of the tools at one's disposal, and to
-        have an idea of where and why a specific tool is applicable.
+        Therefore, it pays to have an idea of the tools at one's disposal, and
+        to have an idea of where and why a specific tool is applicable.
       </p>
       <p>This project uses the following: Typescript, ESLint, Prettier.</p>
     </>

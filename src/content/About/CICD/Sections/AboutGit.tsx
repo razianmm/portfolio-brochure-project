@@ -9,10 +9,6 @@ export const AboutGit = () => {
       </p>
       <p>
         In the case of this site, I have chosen to use Github as my source
-        control provider.
-      </p>
-      <p>
-        In the case of this site, I have chosen to use Github as my source
         control provider. Using Github, I have configured the tests written for
         this project to run automatically. This allows for additional
         verification when performing code reviews.
