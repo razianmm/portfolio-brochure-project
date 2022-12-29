@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 
 import { SiteSection } from "../../../components"
 import { Layout } from "../../../layouts"
@@ -20,19 +20,83 @@ type Error = {
   errorMessage: string
 }
 
-const tablePageIntro = (
-  <>
-    <p className="table__intro">
-      This page demonstrates an example UI for displaying table loaded from an
-      API.
-    </p>
-    <p className="table__intro">
-      The data is mock data pulled using mock API service
-      <a> Mockaroo. </a>
-      There is a check to see whether the data is cached in localStorage.
-    </p>
-  </>
-)
+const TablePageIntro = ({
+  isLoading,
+  isError,
+  setIsLoading,
+  setIsError,
+}: {
+  isLoading: boolean
+  isError: boolean
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
+  setIsError: React.Dispatch<React.SetStateAction<Error>>
+}) => {
+  const [dataIsToggled, setDataIsToggled] = useState<boolean>()
+
+  const [errorIsToggled, setErrorIsToggled] = useState<boolean>()
+
+  return (
+    <>
+      <p className="table__intro">
+        This page demonstrates an example UI for displaying table loaded from an
+        API.
+      </p>
+      <p className="table__intro">
+        The data is mock data pulled using mock API service
+        <a> Mockaroo. </a>
+        There is a check to see whether the data is cached in localStorage.
+      </p>
+      <p className="table__intro">
+        In addition, this page contains logic to both display a loader in
+        circumstances where connection may prohibit data being fetched in a
+        timely manner, and to display an error state when the data is unable to
+        be loaded successfully. These two states can be demo'ed using the two
+        togges below.
+      </p>
+      <div className="table__toggles__wrapper">
+        <input
+          type="checkbox"
+          id="switch-loading"
+          className="table__switch"
+          checked={dataIsToggled}
+          onChange={() => {
+            setDataIsToggled(!dataIsToggled)
+            if (errorIsToggled) {
+              setErrorIsToggled(false)
+              setIsError({ isError: false, errorMessage: "" })
+            }
+            setIsLoading(!isLoading)
+          }}
+        />
+        <label htmlFor="switch-loading">Data loading</label>
+        <p>Data loading</p>
+        <input
+          type="checkbox"
+          id="switch-error"
+          className="table__switch"
+          checked={errorIsToggled}
+          onChange={() => {
+            setErrorIsToggled(!errorIsToggled)
+            if (dataIsToggled) {
+              setDataIsToggled(false)
+              setIsLoading(false)
+            }
+            if (!isError) {
+              setIsError({
+                isError: true,
+                errorMessage: "This is a sample error message",
+              })
+            } else {
+              setIsError({ isError: false, errorMessage: "" })
+            }
+          }}
+        />
+        <label htmlFor="switch-error">Error message</label>
+        <p>Error message</p>
+      </div>
+    </>
+  )
+}
 
 export const Table = () => {
   const [mockData, setMockData] = useState<MockData[]>([])
@@ -83,13 +147,18 @@ export const Table = () => {
   return (
     <Layout>
       <SiteSection>
-        {tablePageIntro}
+        <TablePageIntro
+          isLoading={isLoading}
+          isError={isError.isError}
+          setIsError={setIsError}
+          setIsLoading={setIsLoading}
+        />
         {isLoading && (
           <div className="loader__wrapper">
             <div className="loader"></div>
           </div>
         )}
-        {mockData ? (
+        {!isLoading && !isError.isError && mockData ? (
           <div className="table__wrapper">
             <table className="table">
               <thead>
@@ -117,8 +186,10 @@ export const Table = () => {
         ) : (
           ""
         )}
-        {isError && (
-          <div className="error__wrapper">{isError.errorMessage}</div>
+        {isError.isError && (
+          <div className="error__wrapper">
+            <p>{isError.errorMessage}</p>
+          </div>
         )}
       </SiteSection>
     </Layout>
