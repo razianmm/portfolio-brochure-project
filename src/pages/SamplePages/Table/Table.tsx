@@ -15,6 +15,11 @@ type MockData = {
   email: string
 }
 
+type Error = {
+  isError: boolean
+  errorMessage: string
+}
+
 const tablePageIntro = (
   <>
     <p className="table__intro">
@@ -32,6 +37,13 @@ const tablePageIntro = (
 export const Table = () => {
   const [mockData, setMockData] = useState<MockData[]>([])
 
+  const [isLoading, setIsLoading] = useState<boolean>(true)
+
+  const [isError, setIsError] = useState<Error>({
+    isError: false,
+    errorMessage: "",
+  })
+
   useEffect(() => {
     if (localStorage.getItem("mockData")) {
       const dataFromLocalStorage = localStorage.getItem("mockData")
@@ -40,6 +52,7 @@ export const Table = () => {
         dataFromLocalStorage as string
       )
 
+      setIsLoading(false)
       setMockData(parsedDataFromLocalStorage)
     } else {
       axios
@@ -48,6 +61,8 @@ export const Table = () => {
           console.log(
             "value of key 'mockData' not found in localStorage. Pulling from API..."
           )
+
+          setIsLoading(false)
 
           const data = JSON.stringify(result.data)
 
@@ -58,7 +73,9 @@ export const Table = () => {
           setMockData(parsedData)
         })
         .catch((error) => {
-          alert(`Error loading data: ${error}`)
+          setIsLoading(false)
+
+          setIsError({ isError: true, errorMessage: `${error}` })
         })
     }
   }, [])
@@ -67,32 +84,42 @@ export const Table = () => {
     <Layout>
       <SiteSection>
         {tablePageIntro}
-        <div className="table__wrapper">
-          <table className="table">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-              </tr>
-            </thead>
-            <tbody>
-              {mockData
-                ? mockData.map((data, index) => {
-                    return (
-                      <tr key={index}>
-                        <td>{data.id}</td>
-                        <td>{data.first_name}</td>
-                        <td>{data.last_name}</td>
-                        <td>{data.email}</td>
-                      </tr>
-                    )
-                  })
-                : ""}
-            </tbody>
-          </table>
-        </div>
+        {isLoading && (
+          <div className="loader__wrapper">
+            <div className="loader"></div>
+          </div>
+        )}
+        {mockData ? (
+          <div className="table__wrapper">
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                {mockData.map((data, index) => {
+                  return (
+                    <tr key={index}>
+                      <td>{data.id}</td>
+                      <td>{data.first_name}</td>
+                      <td>{data.last_name}</td>
+                      <td>{data.email}</td>
+                    </tr>
+                  )
+                })}
+              </tbody>
+            </table>
+          </div>
+        ) : (
+          ""
+        )}
+        {isError && (
+          <div className="error__wrapper">{isError.errorMessage}</div>
+        )}
       </SiteSection>
     </Layout>
   )
