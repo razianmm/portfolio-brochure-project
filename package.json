@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,11 +43,13 @@
     ]
   },
   "devDependencies": {
+    "@types/jest-axe": "^3.5.5",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
     "@typescript-eslint/parser": "^5.46.1",
     "clsx": "^1.2.1",
     "eslint": "^8.29.0",
     "eslint-plugin-react": "^7.31.11",
+    "jest-axe": "^7.0.0",
     "prettier": "2.8.1",
     "sass": "^1.56.2"
   }
