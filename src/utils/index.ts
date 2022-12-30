@@ -1,3 +1,5 @@
 import { useTriggerOnScroll, useScreenSize } from "./hooks"
 
-export { useTriggerOnScroll, useScreenSize }
+import { trapFocus } from "./helpers"
+
+export { useTriggerOnScroll, useScreenSize, trapFocus }

@@ -5,10 +5,12 @@ import "./LeftNavigation.scss"
 
 export const LeftNavigation = ({
   isActive,
-  leftNavigationRef,
+  leftNavigationScrimRef,
+  leftNavigationAnchorRef,
 }: {
   isActive: boolean | undefined
-  leftNavigationRef: RefObject<HTMLDivElement>
+  leftNavigationScrimRef: RefObject<HTMLDivElement>
+  leftNavigationAnchorRef: RefObject<HTMLAnchorElement>
 }) => {
   return (
     <>
@@ -27,7 +29,12 @@ export const LeftNavigation = ({
             <a href="/about">About This Site</a>
           </li>
           <li>
-            <a href="https://www.razian.dev" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.razian.dev"
+              target="_blank"
+              rel="noreferrer"
+              ref={leftNavigationAnchorRef}
+            >
               Razian.dev portfolio site
             </a>
           </li>
@@ -36,7 +43,7 @@ export const LeftNavigation = ({
       <div
         className="left-navigation--scrim"
         role="presentation"
-        ref={leftNavigationRef}
+        ref={leftNavigationScrimRef}
       ></div>
     </>
   )
