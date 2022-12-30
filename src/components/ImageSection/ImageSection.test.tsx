@@ -13,6 +13,14 @@ describe("Image Section Component", () => {
     expect(imageElement).toBeInTheDocument()
   })
 
+  it("renders correctly when isSplash prop passed in", () => {
+    render(<ImageSection source="" isSplash />)
+
+    const buttonElement = screen.getAllByRole("button")
+
+    expect(buttonElement).toHaveLength(3)
+  })
+
   it("passes axe automated testing", async () => {
     const { container } = render(<ImageSection source="" />)
 

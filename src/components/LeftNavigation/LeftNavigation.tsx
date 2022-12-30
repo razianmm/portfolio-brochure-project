@@ -14,7 +14,10 @@ export const LeftNavigation = ({
 }) => {
   return (
     <>
-      <div className={clsx("left-navigation", isActive ? "active" : "hidden")}>
+      <nav
+        className={clsx("left-navigation", isActive ? "active" : "hidden")}
+        aria-label="left navigation"
+      >
         <ul>
           <li>
             <a href="/" aria-hidden={!isActive} tabIndex={!isActive ? -1 : 0}>
@@ -61,7 +64,7 @@ export const LeftNavigation = ({
             </a>
           </li>
         </ul>
-      </div>
+      </nav>
       <div
         className="left-navigation--scrim"
         role="presentation"
