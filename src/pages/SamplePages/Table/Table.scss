@@ -123,3 +123,16 @@ input.table__switch:checked + label {
     width: 0.8rem;
   }
 }
+
+@media (max-width: 896px) {
+  .table__wrapper--page {
+    overflow: hidden;
+  }
+  .table__wrapper {
+    overflow: scroll;
+    padding: 1rem;
+  }
+  .table {
+    table-layout: auto;
+  }
+}

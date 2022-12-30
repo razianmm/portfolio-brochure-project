@@ -9,7 +9,7 @@ First iteration:
 - Add at least two sample pages
   - Table that loads from API
   - Item view that loads from API - use different configurations of grid
-- Mobile styles
+- Mobile styles - centralize breakpoints
 - Full accessibility
   - Provide settings menu to toggle features - dark mode?
 - Links to site resources -- configs, source

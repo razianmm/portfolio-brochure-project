@@ -28,23 +28,22 @@ export const Layout = ({ children }: { children: ReactNode }) => {
   }
 
   function closeLeftNavWithEscapeKey(event: KeyboardEvent) {
-    if (isActive && event.key === "Escape") {
+    if (event.key === "Escape") {
       setIsActive(false)
     }
   }
 
-  const handleKeyDown = useCallback(
-    (
-      event: KeyboardEvent,
-      firstFocusableElement: HTMLElement,
-      lastFocusableElement: HTMLElement
-    ) => {
+  const handleKeyDown = (
+    event: KeyboardEvent,
+    firstFocusableElement: HTMLElement,
+    lastFocusableElement: HTMLElement
+  ) => {
+    if (isActive) {
       closeLeftNavWithEscapeKey(event)
 
       trapFocus(event, firstFocusableElement, lastFocusableElement)
-    },
-    [isActive]
-  )
+    }
+  }
 
   useEffect(() => {
     document.addEventListener("click", closeLeftNavOnClickAway)

@@ -17,16 +17,36 @@ export const LeftNavigation = ({
       <div className={clsx("left-navigation", isActive ? "active" : "hidden")}>
         <ul>
           <li>
-            <a href="/">Home</a>
+            <a href="/" aria-hidden={!isActive} tabIndex={!isActive ? -1 : 0}>
+              Home
+            </a>
           </li>
           <li>
-            <a href="/table">Table</a>
+            <a
+              href="/table"
+              aria-hidden={!isActive}
+              tabIndex={!isActive ? -1 : 0}
+            >
+              Table
+            </a>
           </li>
           <li>
-            <a href="/gallery">Gallery</a>
+            <a
+              href="/gallery"
+              aria-hidden={!isActive}
+              tabIndex={!isActive ? -1 : 0}
+            >
+              Gallery
+            </a>
           </li>
           <li>
-            <a href="/about">About This Site</a>
+            <a
+              href="/about"
+              aria-hidden={!isActive}
+              tabIndex={!isActive ? -1 : 0}
+            >
+              About This Site
+            </a>
           </li>
           <li>
             <a
@@ -34,6 +54,8 @@ export const LeftNavigation = ({
               target="_blank"
               rel="noreferrer"
               ref={leftNavigationAnchorRef}
+              aria-hidden={!isActive}
+              tabIndex={!isActive ? -1 : 0}
             >
               Razian.dev portfolio site
             </a>

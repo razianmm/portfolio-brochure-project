@@ -36,7 +36,7 @@ const TablePageIntro = ({
   const [errorIsToggled, setErrorIsToggled] = useState<boolean>()
 
   return (
-    <>
+    <div className="table__wrapper--page">
       <p className="table__intro">
         This page demonstrates an example UI for displaying table loaded from an
         API.
@@ -94,7 +94,7 @@ const TablePageIntro = ({
         <label htmlFor="switch-error">Error message</label>
         <p>Error message</p>
       </div>
-    </>
+    </div>
   )
 }
 
