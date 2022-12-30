@@ -2,7 +2,15 @@
   padding: 2rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(auto-fill, 200px);
+
+  @media (max-width: 540px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 380px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   grid-gap: 15px;
   & figure {
     height: 1fr;
@@ -37,6 +45,12 @@
   display: flex;
   justify-content: flex-end;
   padding-right: 3rem;
+
+  @media (max-width: 380px) {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: 1rem;
+  }
 }
 
 @keyframes shimmer {

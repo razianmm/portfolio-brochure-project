@@ -10,6 +10,7 @@ First iteration:
   - Table that loads from API
   - Item view that loads from API - use different configurations of grid
 - Mobile styles - centralize breakpoints
+- Cross-browser compatibility
 - Full accessibility
   - Provide settings menu to toggle features - dark mode?
 - Links to site resources -- configs, source
