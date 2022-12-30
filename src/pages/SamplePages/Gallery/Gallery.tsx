@@ -1,8 +1,8 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { Fragment, useEffect, useState } from "react"
 
-import { Layout } from "../../../layouts"
 import { SiteSection } from "../../../components"
+import { Layout } from "../../../layouts"
 
 const mockImageAPIURL = `https://picsum.photos/v2/list`
 
@@ -26,6 +26,10 @@ export const Gallery = () => {
     useState<number>(5)
 
   useEffect(() => {
+    if (mockData.length) {
+      return
+    }
+
     axios
       .get(mockImageAPIURL)
       .then((result) => {
@@ -44,7 +48,7 @@ export const Gallery = () => {
       .catch((error) => {
         alert(`Error loading data: ${error}`)
       })
-  }, [])
+  }, [mockData])
 
   return (
     <Layout>
@@ -69,8 +73,6 @@ export const Gallery = () => {
           <select
             id="options-select"
             onChange={(e) => {
-              console.log(e.target.value)
-
               const valueToSet = Number(e.target.value)
 
               setNumberOfOptionsToDisplay(valueToSet)
@@ -86,10 +88,9 @@ export const Gallery = () => {
         <div className="gallery">
           {mockData.slice(0, numberOfOptionsToDisplay).map((image, index) => {
             return (
-              <>
+              <Fragment key={index}>
                 <figure>
                   <img
-                    key={index}
                     src={image.download_url}
                     className={clsx(
                       "gallery__image",
@@ -105,7 +106,7 @@ export const Gallery = () => {
                     }}
                   />
                 </figure>
-              </>
+              </Fragment>
             )
           })}
         </div>

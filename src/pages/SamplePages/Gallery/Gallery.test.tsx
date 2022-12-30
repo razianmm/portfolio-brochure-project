@@ -1,17 +1,8 @@
 import { render, screen } from "@testing-library/react"
-
+import userEvent from "@testing-library/user-event"
 import { axe } from "jest-axe"
 
-import userEvent from "@testing-library/user-event"
-
 import { Gallery } from "./Gallery"
-
-import axios from "axios"
-
-jest.mock("axios")
-
-const mockedAxios = axios as jest.MockedFunction<typeof axios>
-
 import { mockData } from "./mockData"
 
 describe("Gallery Component", () => {
@@ -25,22 +16,14 @@ describe("Gallery Component", () => {
     expect(selectLabelElement).toBeInTheDocument()
   })
 
-  it("toggles the correct number of items when corresponding value chosen in select", () => {
+  it("toggles the correct number of items when corresponding value chosen in select", async () => {
     render(<Gallery />)
 
-    mockedAxios.mockResolvedValue({
-      data: mockData,
-      status: 200,
-      statusText: "OK",
-      headers: {},
-      config: {},
-    })
-
-    const selectElement = screen.getByRole("combobox")
+    const selectElement = await screen.findByRole("combobox")
 
     userEvent.selectOptions(selectElement, "5")
 
-    const renderedImageElements = screen.getAllByRole("img")
+    const renderedImageElements = await screen.findAllByRole("img")
 
     expect(renderedImageElements).toHaveLength(5)
   })
