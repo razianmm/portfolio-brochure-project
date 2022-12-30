@@ -6,6 +6,8 @@ import reportWebVitals from "./reportWebVitals"
 
 import { Home, AboutThisSite, Table, Gallery } from "./pages"
 
+import "./index.css"
+
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
   { path: "/about", element: <AboutThisSite /> },

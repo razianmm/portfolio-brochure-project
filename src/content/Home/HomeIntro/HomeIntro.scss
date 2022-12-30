@@ -6,4 +6,12 @@
   justify-content: center;
   align-items: center;
   color: white;
+  padding: 1rem;
+
+  @media (max-width: 799px) {
+    & h2,
+    & h3 {
+      text-align: center;
+    }
+  }
 }

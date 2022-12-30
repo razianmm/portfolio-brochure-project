@@ -1,6 +1,5 @@
 .split-one--left,
 .split-one--right {
-  flex-grow: 1;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -9,6 +8,7 @@
   &__link {
     color: white;
     text-decoration: none;
+    padding: 1rem;
     &:hover {
       cursor: pointer;
     }
