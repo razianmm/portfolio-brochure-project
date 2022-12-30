@@ -9,12 +9,12 @@ type SiteSectionProps = {
 
 export const SiteSection: FC<SiteSectionProps> = ({ isSplit, children }) => {
   return (
-    <div>
+    <section>
       {isSplit ? (
         <div className="site-section__wrapper--split">{children}</div>
       ) : (
         <div className="site-section__wrapper--wide">{children}</div>
       )}
-    </div>
+    </section>
   )
 }

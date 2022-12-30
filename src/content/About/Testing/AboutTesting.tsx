@@ -1,10 +1,9 @@
-import { AboutReactTesting, AboutCypress } from "./Sections"
+import { AboutReactTesting } from "./Sections"
 
 export const AboutTesting = () => {
   return (
     <>
       <AboutReactTesting />
-      <AboutCypress />
     </>
   )
 }
