@@ -10,3 +10,5 @@ jobs:
         with:
           node-version: "18"
       - run: yarn github || echo "Test failed"; exit 1
+        env:
+        REACT_APP_MOCKAROO_API_KEY: ${{ secrets.REACT_APP_MOCKAROO_API_KEY }}
