@@ -23,7 +23,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
-    "github": "eslint src && yarn build && yarn test"
+    "lint": "eslint src",
+    "github": "yarn lint && yarn build && yarn test"
   },
   "eslintConfig": {
     "extends": [
