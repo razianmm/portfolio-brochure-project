@@ -1,0 +1,138 @@
+.table__intro {
+  padding: 0 3rem 1rem 3rem;
+
+  &:first-of-type {
+    padding-top: 3rem;
+  }
+
+  &:last-of-type {
+    padding-bottom: 3rem;
+  }
+}
+
+.table__wrapper {
+  padding: 3rem;
+}
+
+.table {
+  padding: 1rem;
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  thead tr th,
+  tbody tr td {
+    text-align: left;
+    padding: 0.5rem;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+}
+
+.error__wrapper {
+  display: flex;
+  justify-content: center;
+
+  & p {
+    font-size: 2rem;
+    color: red;
+  }
+}
+
+.loader__wrapper {
+  display: flex;
+  justify-content: center;
+
+  .loader {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .loader:after {
+    content: " ";
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    margin: 0.5rem;
+    border-radius: 50%;
+    border: 6px solid black;
+    border-color: black transparent black transparent;
+    animation: isLoading 1.2s linear infinite;
+  }
+}
+
+@keyframes isLoading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.table__toggles__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+input.table__switch {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+input.table__switch + label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 2rem;
+  height: 1rem;
+  background: grey;
+  display: block;
+  border-radius: 6.25rem;
+  position: relative;
+  margin-right: 0.5rem;
+
+  & + p:first-of-type {
+    margin-right: 0.5rem;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0.1rem;
+    left: 0.2rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    background: #fff;
+    border-radius: 5.6rem;
+    transition: 0.2s;
+  }
+}
+
+input.table__switch:checked + label {
+  background: grey;
+
+  &:after {
+    left: calc(100% - 0.2rem);
+    transform: translateX(-100%);
+  }
+
+  &:active:after {
+    width: 0.8rem;
+  }
+}
+
+@media (max-width: 896px) {
+  .table__wrapper--page {
+    overflow: hidden;
+  }
+  .table__wrapper {
+    overflow: scroll;
+    padding: 1rem;
+  }
+  .table {
+    table-layout: auto;
+  }
+}

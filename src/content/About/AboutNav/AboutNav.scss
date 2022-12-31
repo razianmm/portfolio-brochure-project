@@ -3,4 +3,31 @@
   justify-content: space-around;
   list-style: none;
   padding: 1rem 0;
+
+  & button {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    &:hover {
+      cursor: pointer;
+    }
+    &:not(.active):hover .sliding-border {
+      transition: width 0.2s linear;
+      width: 100%;
+    }
+    &.active {
+      text-shadow: #000 0px 0 1px;
+      .sliding-border {
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+      }
+    }
+  }
+}
+
+.sliding-border {
+  display: block;
+  height: 1px;
+  background-color: #000;
+  width: 0;
 }

@@ -4,12 +4,15 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
 import reportWebVitals from "./reportWebVitals"
 
-import { Home, AboutThisSite, Table } from "./pages"
+import { Home, AboutThisSite, Table, Gallery } from "./pages"
+
+import "./index.css"
 
 const router = createBrowserRouter([
   { path: "/", element: <Home /> },
   { path: "/about", element: <AboutThisSite /> },
   { path: "/table", element: <Table /> },
+  { path: "/gallery", element: <Gallery /> },
 ])
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)

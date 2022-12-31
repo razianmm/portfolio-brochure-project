@@ -1,12 +1,14 @@
-$site-section-height: 10rem;
-
 .site-section__wrapper--split {
   display: flex;
   justify-content: space-around;
-  height: $site-section-height;
+  @media (max-width: 391px) {
+    flex-direction: column;
+    & :first-child {
+      margin-bottom: 1rem;
+    }
+  }
 }
 
 .site-section__wrapper--wide {
   width: 100%;
-  height: $site-section-height;
 }

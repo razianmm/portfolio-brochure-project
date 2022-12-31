@@ -10,6 +10,7 @@
     "@types/node": "^16.18.9",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
+    "axios": "^1.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.5.0",
@@ -20,8 +21,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --watchAll=false",
+    "eject": "react-scripts eject",
+    "lint": "eslint src",
+    "github": "yarn && yarn lint && yarn build && yarn test"
   },
   "eslintConfig": {
     "extends": [
@@ -42,12 +45,19 @@
     ]
   },
   "devDependencies": {
+    "@types/jest-axe": "^3.5.5",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
     "@typescript-eslint/parser": "^5.46.1",
     "clsx": "^1.2.1",
     "eslint": "^8.29.0",
     "eslint-plugin-react": "^7.31.11",
+    "jest-axe": "^7.0.0",
     "prettier": "2.8.1",
     "sass": "^1.56.2"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs"
+    }
   }
 }

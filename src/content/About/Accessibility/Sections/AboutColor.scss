@@ -1,0 +1,11 @@
+.about-color__figure {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  & figcaption {
+    align-self: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+}
