@@ -3,15 +3,12 @@ import userEvent from "@testing-library/user-event"
 import { axe } from "jest-axe"
 
 import { Gallery } from "./Gallery"
-import { mockData } from "./mockData"
 
 describe("Gallery Component", () => {
   it("renders successfully", () => {
     render(<Gallery />)
 
-    const selectLabelElement = screen.getByLabelText(
-      "Number of options to display:"
-    )
+    const selectLabelElement = screen.getByText("Number of options to display:")
 
     expect(selectLabelElement).toBeInTheDocument()
   })
@@ -21,11 +18,11 @@ describe("Gallery Component", () => {
 
     const selectElement = await screen.findByRole("combobox")
 
-    userEvent.selectOptions(selectElement, "5")
+    userEvent.selectOptions(selectElement, "10")
 
     const renderedImageElements = await screen.findAllByRole("img")
 
-    expect(renderedImageElements).toHaveLength(5)
+    expect(renderedImageElements).toHaveLength(10)
   })
 
   it("passes axe automated testing", async () => {

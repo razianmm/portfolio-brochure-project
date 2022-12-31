@@ -31,9 +31,9 @@ const TablePageIntro = ({
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
   setIsError: React.Dispatch<React.SetStateAction<Error>>
 }) => {
-  const [dataIsToggled, setDataIsToggled] = useState<boolean>()
+  const [dataIsToggled, setDataIsToggled] = useState<boolean>(false)
 
-  const [errorIsToggled, setErrorIsToggled] = useState<boolean>()
+  const [errorIsToggled, setErrorIsToggled] = useState<boolean>(false)
 
   return (
     <div className="table__wrapper--page">
@@ -122,10 +122,6 @@ export const Table = () => {
       axios
         .get(mockDataURL)
         .then((result) => {
-          console.log(
-            "value of key 'mockData' not found in localStorage. Pulling from API..."
-          )
-
           setIsLoading(false)
 
           const data = JSON.stringify(result.data)

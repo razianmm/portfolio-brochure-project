@@ -1,7 +1,6 @@
-import { ReactNode, useCallback, useEffect, useRef, useState } from "react"
+import { ReactNode, useEffect, useRef, useState } from "react"
 
 import { LeftNavigation, TopNavigation } from "../components"
-
 import { trapFocus } from "../utils"
 
 import "./Layout.scss"
