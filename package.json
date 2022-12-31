@@ -24,7 +24,7 @@
     "test": "react-scripts test --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "eslint src",
-    "github": "yarn lint && yarn build && yarn test"
+    "github": "yarn && yarn lint && yarn build && yarn test"
   },
   "eslintConfig": {
     "extends": [
