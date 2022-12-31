@@ -11,4 +11,4 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "18"
-      - run: yarn github || echo "Test failed"; exit 1
+      - run: yarn github
