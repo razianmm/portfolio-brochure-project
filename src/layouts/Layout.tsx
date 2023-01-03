@@ -71,7 +71,7 @@ export const Layout = ({ children }: { children: ReactNode }) => {
   }, [isActive])
 
   return (
-    <div className="layout__container">
+    <main className="layout__container">
       <TopNavigation
         isActive={isActive}
         toggleLeftNav={setIsActive}
@@ -83,6 +83,6 @@ export const Layout = ({ children }: { children: ReactNode }) => {
         leftNavigationAnchorRef={leftNavigationAnchorRef}
       />
       {children}
-    </div>
+    </main>
   )
 }

@@ -1,8 +1,9 @@
+import { RefObject } from "react"
+
 import { TopNavigationMenuToggle } from "./TopNavigationButtons/TopNavigationMenuToggle"
 import { TopNavigationSettings } from "./TopNavigationButtons/TopNavigationSettings"
 
 import "./TopNavigation.scss"
-import { RefObject } from "react"
 
 export const TopNavigation = ({
   isActive,
@@ -22,7 +23,7 @@ export const TopNavigation = ({
           toggleButtonRef={toggleButtonRef}
         />
         <a className="top-navigation__left__link" href="/">
-          <h1 className="top-navigation__left__logo">Sample Site</h1>
+          <h1 className="top-navigation__left__logo">Frontend Dev Site</h1>
         </a>
       </div>
       <div className="top-navigation__right">

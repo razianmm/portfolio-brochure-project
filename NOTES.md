@@ -10,8 +10,9 @@ First iteration:
 - Cross-browser compatibility
 - Clean up site folders
 - Add links to site resources -- configs, source
-- Add 404 page
+- Add 404 page, favicon
 
 Second interation:
 
 - Additional sample pages?
+- Tweak aninmations on home page to only play once

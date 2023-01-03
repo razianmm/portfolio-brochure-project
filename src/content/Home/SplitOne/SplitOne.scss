@@ -23,11 +23,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 5px 10px 8px rgba(128, 128, 128, 0.613);
+  transition: box-shadow 0.3s ease-in-out;
+
   &.active {
     animation: fadeIn;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
+
+    &:hover {
+      transition: box-shadow 0.3s ease-in-out;
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.7), 0 3px 9px rgba(0, 0, 0, 0.2);
+    }
   }
   color: white;
 }
@@ -40,11 +46,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 5px 10px 8px rgba(128, 128, 128, 0.613);
+  transition: box-shadow 0.3s ease-in-out;
+
   &.active {
     animation: fadeIn;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
+  }
+  &:hover {
+    transition: box-shadow 0.3s ease-in-out;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.7), 0 3px 9px rgba(0, 0, 0, 0.2);
   }
   color: white;
 }

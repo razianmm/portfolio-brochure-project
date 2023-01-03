@@ -21,6 +21,14 @@
   & ul li {
     list-style-type: none;
     padding: 0.5rem;
+
+    & a {
+      color: white;
+      text-decoration: none;
+      &:hover {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
   }
 
   .left-navigation--scrim {
