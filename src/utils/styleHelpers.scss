@@ -1,0 +1,5 @@
+@mixin reduce-animation {
+  .layout__container.animation-disabled & {
+    @content;
+  }
+}

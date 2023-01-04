@@ -2,9 +2,9 @@ import React from "react"
 import ReactDOM from "react-dom/client"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
+import { AboutThisSite, Gallery, Home, Table } from "./pages"
 import reportWebVitals from "./reportWebVitals"
-
-import { Home, AboutThisSite, Table, Gallery } from "./pages"
+import { SiteContextProvider } from "./utils/context"
 
 import "./index.css"
 
@@ -18,7 +18,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <SiteContextProvider>
+      <RouterProvider router={router} />
+    </SiteContextProvider>
   </React.StrictMode>
 )
 

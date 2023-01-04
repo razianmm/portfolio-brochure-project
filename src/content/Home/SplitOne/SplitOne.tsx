@@ -1,4 +1,5 @@
 import clsx from "clsx"
+import { Link } from "react-router-dom"
 
 import { useTriggerOnScroll } from "../../../utils/hooks"
 
@@ -10,9 +11,9 @@ export const SplitOneLeft = () => {
   return (
     <div className="split-one--left">
       <div className={clsx(isIntersecting && "active")} ref={ref}>
-        <a className="split-one--left__link" href="/table">
+        <Link className="split-one--left__link" to="/table">
           <h2>Visit Table page</h2>
-        </a>
+        </Link>
       </div>
     </div>
   )
@@ -24,9 +25,9 @@ export const SplitOneRight = () => {
   return (
     <div className="split-one--right">
       <div className={clsx(isIntersecting && "active")} ref={ref}>
-        <a className="split-one--right__link" href="/about">
+        <Link className="split-one--right__link" to="/about">
           <h2>Visit About page</h2>
-        </a>
+        </Link>
       </div>
     </div>
   )

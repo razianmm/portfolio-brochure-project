@@ -10,12 +10,15 @@ describe("Top Navigation Component", () => {
 
   const mockToggleRef = jest.fn()
 
+  const mockToggleAnimation = jest.fn()
+
   it("renders successfully", () => {
     render(
       <TopNavigation
         isActive
         toggleLeftNav={mockToggleRef}
         toggleButtonRef={mockRef as RefObject<HTMLButtonElement>}
+        toggleAnimation={mockToggleAnimation}
       />
     )
 
@@ -30,6 +33,7 @@ describe("Top Navigation Component", () => {
         isActive
         toggleLeftNav={mockToggleRef}
         toggleButtonRef={mockRef as RefObject<HTMLButtonElement>}
+        toggleAnimation={mockToggleAnimation}
       />
     )
 

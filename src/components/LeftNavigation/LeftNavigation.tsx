@@ -1,5 +1,6 @@
 import clsx from "clsx"
 import { RefObject } from "react"
+import { Link } from "react-router-dom"
 
 import "./LeftNavigation.scss"
 
@@ -20,36 +21,36 @@ export const LeftNavigation = ({
       >
         <ul>
           <li>
-            <a href="/" aria-hidden={!isActive} tabIndex={!isActive ? -1 : 0}>
+            <Link to="/" aria-hidden={!isActive} tabIndex={!isActive ? -1 : 0}>
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/table"
+            <Link
+              to="/table"
               aria-hidden={!isActive}
               tabIndex={!isActive ? -1 : 0}
             >
               Table
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/gallery"
+            <Link
+              to="/gallery"
               aria-hidden={!isActive}
               tabIndex={!isActive ? -1 : 0}
             >
               Gallery
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/about"
+            <Link
+              to="/about"
               aria-hidden={!isActive}
               tabIndex={!isActive ? -1 : 0}
             >
               About This Site
-            </a>
+            </Link>
           </li>
           <li>
             <a

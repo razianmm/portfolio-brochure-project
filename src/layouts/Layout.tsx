@@ -1,7 +1,9 @@
+import clsx from "clsx"
 import { ReactNode, useEffect, useRef, useState } from "react"
 
 import { LeftNavigation, TopNavigation } from "../components"
 import { trapFocus } from "../utils"
+import { Consumer } from "../utils/context"
 
 import "./Layout.scss"
 
@@ -71,18 +73,32 @@ export const Layout = ({ children }: { children: ReactNode }) => {
   }, [isActive])
 
   return (
-    <main className="layout__container">
-      <TopNavigation
-        isActive={isActive}
-        toggleLeftNav={setIsActive}
-        toggleButtonRef={topNavigationRef}
-      />
-      <LeftNavigation
-        isActive={isActive}
-        leftNavigationScrimRef={leftNavigationScrimRef}
-        leftNavigationAnchorRef={leftNavigationAnchorRef}
-      />
-      {children}
-    </main>
+    <Consumer>
+      {(value) => (
+        <main
+          className={clsx(
+            "layout__container",
+            value.animationIsDisabled && "animation-disabled"
+          )}
+        >
+          <TopNavigation
+            isActive={isActive}
+            toggleAnimation={
+              value.toggleAnimation as React.Dispatch<
+                React.SetStateAction<boolean>
+              >
+            }
+            toggleLeftNav={setIsActive}
+            toggleButtonRef={topNavigationRef}
+          />
+          <LeftNavigation
+            isActive={isActive}
+            leftNavigationScrimRef={leftNavigationScrimRef}
+            leftNavigationAnchorRef={leftNavigationAnchorRef}
+          />
+          {children}
+        </main>
+      )}
+    </Consumer>
   )
 }
