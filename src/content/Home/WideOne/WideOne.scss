@@ -29,6 +29,13 @@
 
   &.active {
     animation: slideIn 0.5s forwards;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+      transform: translateX(0%);
+      opacity: 100%;
+    }
+
     @include reduce-animation {
       animation: none;
       transform: translateX(0%);

@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import { Consumer } from "../../../utils/context"
 
@@ -12,6 +12,17 @@ export const TopNavigationSettings = ({
   toggleAnimation: React.Dispatch<React.SetStateAction<boolean>>
 }) => {
   const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
+
+  const [prefersReducedAnimation, setPrefersReducedAnimation] =
+    useState<boolean>(false)
+
+  useEffect(() => {
+    const animationPreference = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    )
+
+    setPrefersReducedAnimation(animationPreference.matches ? true : false)
+  }, [menuIsOpen])
 
   return (
     <Consumer>
@@ -29,12 +40,16 @@ export const TopNavigationSettings = ({
                 id="animation-toggle"
                 className="settings-menu__switch"
                 checked={value.animationIsDisabled}
+                disabled={prefersReducedAnimation}
                 onChange={() => {
                   toggleAnimation(!value.animationIsDisabled)
                 }}
               />
               <label htmlFor="animation-toggle">Disable animations</label>
               <p>Disable animations</p>
+              <div className="settings-menu__tooltip">
+                User preference set on system level
+              </div>
             </div>
           </div>
         </>

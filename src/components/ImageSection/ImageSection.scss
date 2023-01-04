@@ -27,6 +27,10 @@
   }
   animation: pointDownwards 1s ease infinite;
 
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+
   @include reduce-animation {
     animation: none;
   }

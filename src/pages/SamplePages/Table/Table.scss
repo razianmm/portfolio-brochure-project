@@ -1,3 +1,5 @@
+@import "../../../utils/styleHelpers.scss";
+
 .table__intro {
   padding: 0 3rem 1rem 3rem;
 
@@ -58,6 +60,13 @@
     border: 6px solid black;
     border-color: black transparent black transparent;
     animation: isLoading 1.2s linear infinite;
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+
+    @include reduce-animation {
+      animation: none;
+    }
   }
 }
 

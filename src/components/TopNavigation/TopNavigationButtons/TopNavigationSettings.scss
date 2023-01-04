@@ -30,9 +30,31 @@
   display: flex;
   align-items: center;
   padding: 0.5rem;
+  position: relative;
 
   & p {
     color: white;
+  }
+
+  & .settings-menu__tooltip {
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 0.3rem;
+    border-radius: 2px;
+    left: -140%;
+    display: none;
+
+    &::after {
+      content: "";
+      display: inline-block;
+      clip-path: polygon(60% 0%, 100% 50%, 60% 100%);
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      background-color: black;
+      right: -8px;
+    }
   }
 }
 
@@ -40,6 +62,10 @@ input.settings-menu__switch {
   height: 0;
   width: 0;
   visibility: hidden;
+}
+
+input.settings-menu__switch:disabled:hover ~ .settings-menu__tooltip {
+  display: block;
 }
 
 input.settings-menu__switch + label {
@@ -67,6 +93,18 @@ input.settings-menu__switch + label {
     background: #fff;
     border-radius: 5.6rem;
     transition: 0.2s;
+  }
+}
+
+input.settings-menu__switch:disabled + label {
+  background: rgba(0, 0, 0, 0.2);
+
+  &:after {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  & + p {
+    color: rgba(255, 255, 255, 0.5);
   }
 }
 
