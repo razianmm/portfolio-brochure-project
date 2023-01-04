@@ -4,8 +4,7 @@ First iteration:
 
 - Run an accessibility pass over whole site:
   - Improve accessibility of image section -- fallback if loading does not work? Can I make the image more responsive?
-  - Toggle animations - include check for user settings
-  - Provide settings menu to toggle features - dark mode?
+  - Provide settings menu to toggle dark mode?
 - Mobile styles - centralize breakpoints?
 - Cross-browser compatibility
 - Clean up site folders, fix imports
@@ -15,4 +14,4 @@ First iteration:
 Second interation:
 
 - Additional sample pages?
-- Tweak aninmations on home page to only play once
+- Tweak animations on home page to only play once
