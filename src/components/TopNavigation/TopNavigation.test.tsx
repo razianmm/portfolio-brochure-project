@@ -12,6 +12,8 @@ describe("Top Navigation Component", () => {
 
   const mockToggleAnimation = jest.fn()
 
+  const mockToggleTheme = jest.fn()
+
   it("renders successfully", () => {
     render(
       <TopNavigation
@@ -19,6 +21,7 @@ describe("Top Navigation Component", () => {
         toggleLeftNav={mockToggleRef}
         toggleButtonRef={mockRef as RefObject<HTMLButtonElement>}
         toggleAnimation={mockToggleAnimation}
+        toggleTheme={mockToggleTheme}
       />
     )
 
@@ -34,6 +37,7 @@ describe("Top Navigation Component", () => {
         toggleLeftNav={mockToggleRef}
         toggleButtonRef={mockRef as RefObject<HTMLButtonElement>}
         toggleAnimation={mockToggleAnimation}
+        toggleTheme={mockToggleTheme}
       />
     )
 

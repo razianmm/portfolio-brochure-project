@@ -10,11 +10,13 @@ export const TopNavigation = ({
   toggleLeftNav,
   toggleButtonRef,
   toggleAnimation,
+  toggleTheme,
 }: {
   isActive: boolean | undefined
   toggleLeftNav: React.Dispatch<React.SetStateAction<boolean | undefined>>
   toggleButtonRef: RefObject<HTMLButtonElement>
   toggleAnimation: React.Dispatch<React.SetStateAction<boolean>>
+  toggleTheme: React.Dispatch<React.SetStateAction<string>>
 }) => {
   return (
     <nav className="top-navigation">
@@ -29,7 +31,10 @@ export const TopNavigation = ({
         </a>
       </div>
       <div className="top-navigation__right">
-        <TopNavigationSettings toggleAnimation={toggleAnimation} />
+        <TopNavigationSettings
+          toggleAnimation={toggleAnimation}
+          toggleTheme={toggleTheme}
+        />
       </div>
     </nav>
   )

@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import { ReactNode, useEffect, useRef, useState } from "react"
+import React, { ReactNode, useEffect, useRef, useState } from "react"
 
 import { LeftNavigation, TopNavigation } from "../components"
 import { trapFocus } from "../utils"
@@ -72,21 +72,34 @@ export const Layout = ({ children }: { children: ReactNode }) => {
     }
   }, [isActive])
 
+  function calculateTheme(theme: string) {
+    switch (theme) {
+      case "dynamic":
+        return "dynamic"
+      case "light":
+        return "light"
+      case "dark":
+        return "dark"
+    }
+  }
+
   return (
     <Consumer>
-      {(value) => (
+      {({ animationIsDisabled, toggleAnimation, toggleTheme, theme }) => (
         <main
           className={clsx(
             "layout__container",
-            value.animationIsDisabled && "animation-disabled"
+            `site-theme--${calculateTheme(theme)}`,
+            animationIsDisabled && "animation-disabled"
           )}
         >
           <TopNavigation
             isActive={isActive}
             toggleAnimation={
-              value.toggleAnimation as React.Dispatch<
-                React.SetStateAction<boolean>
-              >
+              toggleAnimation as React.Dispatch<React.SetStateAction<boolean>>
+            }
+            toggleTheme={
+              toggleTheme as React.Dispatch<React.SetStateAction<string>>
             }
             toggleLeftNav={setIsActive}
             toggleButtonRef={topNavigationRef}

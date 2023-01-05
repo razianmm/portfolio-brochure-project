@@ -6,7 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: var(--background);
   &__link {
     color: white;
     text-decoration: none;
@@ -20,7 +20,7 @@
 .split-one--left div {
   height: 60%;
   width: 60%;
-  background-color: #3359a8;
+  background-color: var(--blue-200);
   opacity: 0;
   display: flex;
   justify-content: center;
@@ -69,7 +69,7 @@
 .split-one--right div {
   height: 60%;
   width: 60%;
-  background-color: #a3760d;
+  background-color: var(--yellow);
   opacity: 0;
   display: flex;
   justify-content: center;

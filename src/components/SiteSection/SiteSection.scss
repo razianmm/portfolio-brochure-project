@@ -1,6 +1,7 @@
 .site-section__wrapper--split {
   display: flex;
   justify-content: space-around;
+  background-color: var(--background);
   @media (max-width: 391px) {
     flex-direction: column;
     & :first-child {

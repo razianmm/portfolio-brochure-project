@@ -1,3 +1,39 @@
 :root {
   --breakpoint-tablet: 799px;
 }
+
+@media (prefers-color-scheme: dark) {
+  .site-theme--dynamic {
+    --yellow: #513b06;
+    --blue-100: #0b348e;
+    --blue-200: #192c54;
+    --background: #00000d;
+    --font: #fffff2;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .site-theme--dynamic {
+    --yellow: #a3760d;
+    --blue-100: #437af0;
+    --blue-200: #3359a8;
+    --background: #fffff2;
+    --font: #00000d;
+  }
+}
+
+.site-theme--light {
+  --yellow: #a3760d;
+  --blue-100: #437af0;
+  --blue-200: #3359a8;
+  --background: #fffff2;
+  --font: #00000d;
+}
+
+.site-theme--dark {
+  --yellow: #513b06;
+  --blue-100: #0b348e;
+  --blue-200: #192c54;
+  --background: #00000d;
+  --font: #fffff2;
+}
