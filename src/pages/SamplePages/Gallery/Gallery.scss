@@ -5,6 +5,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 
+  background-color: var(--background);
+
   @media (max-width: 540px) {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -21,6 +23,7 @@
 
 .gallery__intro {
   padding: 3rem;
+  color: var(--font);
 
   &:not(:first-child) {
     padding: 0 3rem 3rem 3rem;

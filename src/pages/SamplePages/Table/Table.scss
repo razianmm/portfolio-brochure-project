@@ -14,6 +14,12 @@
 
 .table__wrapper {
   padding: 3rem;
+  background-color: var(--background);
+}
+
+.table__wrapper--page {
+  background-color: var(--background);
+  color: var(--font);
 }
 
 .table {
@@ -21,12 +27,14 @@
   border-collapse: collapse;
   width: 100%;
   table-layout: fixed;
+  color: var(--font);
+  background-color: var(--background);
   thead tr th,
   tbody tr td {
     text-align: left;
     padding: 0.5rem;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 1px solid var(--font);
+    border-bottom: 1px solid var(--font);
   }
 }
 
@@ -57,8 +65,8 @@
     height: 4rem;
     margin: 0.5rem;
     border-radius: 50%;
-    border: 6px solid black;
-    border-color: black transparent black transparent;
+    border: 6px solid var(--font);
+    border-color: var(--font) transparent var(--font) transparent;
     animation: isLoading 1.2s linear infinite;
     @media (prefers-reduced-motion: reduce) {
       animation: none;
