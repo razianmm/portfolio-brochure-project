@@ -2,7 +2,7 @@ import React from "react"
 import ReactDOM from "react-dom/client"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
-import { AboutThisSite, Gallery, Home, Table } from "./pages"
+import { AboutThisSite, Gallery, Home, Table, PageNotFound } from "./pages"
 import reportWebVitals from "./reportWebVitals"
 import { SiteContextProvider } from "./utils/context"
 
@@ -13,6 +13,7 @@ const router = createBrowserRouter([
   { path: "/about", element: <AboutThisSite /> },
   { path: "/table", element: <Table /> },
   { path: "/gallery", element: <Gallery /> },
+  { path: "*", element: <PageNotFound /> },
 ])
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
