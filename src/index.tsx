@@ -2,7 +2,7 @@ import React from "react"
 import ReactDOM from "react-dom/client"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
-import { AboutThisSite, Gallery, Home, Table, PageNotFound } from "./pages"
+import { AboutThisSite, Gallery, Home, PageNotFound, Table } from "./pages"
 import reportWebVitals from "./reportWebVitals"
 import { SiteContextProvider } from "./utils/context"
 

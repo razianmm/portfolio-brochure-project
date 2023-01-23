@@ -18,9 +18,17 @@
 }
 
 .split-one--left div {
+  background-color: var(--blue-200);
+}
+
+.split-one--right div {
+  background-color: var(--yellow);
+}
+
+.split-one--left div,
+.split-one--right div {
   height: 60%;
   width: 60%;
-  background-color: var(--blue-200);
   opacity: 0;
   display: flex;
   justify-content: center;
@@ -29,12 +37,12 @@
 
   @media (prefers-reduced-motion: reduce) {
     transition: none;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.7), 0 3px 9px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 3px var(--box-shadow-1), 0 3px 9px var(--box-shadow-2);
   }
 
   @include reduce-animation {
     transition: none;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.7), 0 3px 9px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 3px var(--box-shadow-1), 0 3px 9px var(--box-shadow-2);
   }
 
   &.active {
@@ -44,7 +52,7 @@
 
     &:hover {
       transition: box-shadow 0.3s ease-in-out;
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.7), 0 3px 9px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 3px 3px var(--box-shadow-1), 0 3px 9px var(--box-shadow-2);
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -63,56 +71,6 @@
       }
     }
   }
-  color: white;
-}
-
-.split-one--right div {
-  height: 60%;
-  width: 60%;
-  background-color: var(--yellow);
-  opacity: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: box-shadow 0.3s ease-in-out;
-
-  @media (prefers-reduced-motion: reduce) {
-    transition: none;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.7), 0 3px 9px rgba(0, 0, 0, 0.2);
-  }
-
-  @include reduce-animation {
-    transition: none;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.7), 0 3px 9px rgba(0, 0, 0, 0.2);
-  }
-
-  &.active {
-    animation: fadeIn;
-    animation-duration: 1.5s;
-    animation-fill-mode: forwards;
-
-    &:hover {
-      transition: box-shadow 0.3s ease-in-out;
-      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.7), 0 3px 9px rgba(0, 0, 0, 0.2);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-    opacity: 100%;
-    &:hover {
-      transition: none;
-    }
-  }
-
-  @include reduce-animation {
-    animation: none;
-    opacity: 100%;
-    &:hover {
-      transition: none;
-    }
-  }
-
   color: white;
 }
 
