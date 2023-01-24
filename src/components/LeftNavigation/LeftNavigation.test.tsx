@@ -1,20 +1,22 @@
 import { render, screen } from "@testing-library/react"
-
 import { axe } from "jest-axe"
+import { RefObject } from "react"
+import { MemoryRouter } from "react-router-dom"
 
 import { LeftNavigation } from "./LeftNavigation"
-import { RefObject } from "react"
 
 describe("Left Navigation Component", () => {
   const mockRef = { current: {} }
 
   it("renders successfully", () => {
     render(
-      <LeftNavigation
-        isActive
-        leftNavigationAnchorRef={mockRef as RefObject<HTMLAnchorElement>}
-        leftNavigationScrimRef={mockRef as RefObject<HTMLDivElement>}
-      />
+      <MemoryRouter>
+        <LeftNavigation
+          isActive
+          leftNavigationAnchorRef={mockRef as RefObject<HTMLAnchorElement>}
+          leftNavigationScrimRef={mockRef as RefObject<HTMLDivElement>}
+        />
+      </MemoryRouter>
     )
 
     const leftNavScrimElement = screen.getByRole("presentation")
@@ -24,11 +26,13 @@ describe("Left Navigation Component", () => {
 
   it("applies attributes conditionally when isActive prop is falsed", () => {
     render(
-      <LeftNavigation
-        isActive={false}
-        leftNavigationAnchorRef={mockRef as RefObject<HTMLAnchorElement>}
-        leftNavigationScrimRef={mockRef as RefObject<HTMLDivElement>}
-      />
+      <MemoryRouter>
+        <LeftNavigation
+          isActive={false}
+          leftNavigationAnchorRef={mockRef as RefObject<HTMLAnchorElement>}
+          leftNavigationScrimRef={mockRef as RefObject<HTMLDivElement>}
+        />
+      </MemoryRouter>
     )
 
     const leftNavigationParentElement = screen.getByRole("navigation")
@@ -42,11 +46,13 @@ describe("Left Navigation Component", () => {
 
   it("passes axe automated testing", async () => {
     const { container } = render(
-      <LeftNavigation
-        isActive
-        leftNavigationAnchorRef={mockRef as RefObject<HTMLAnchorElement>}
-        leftNavigationScrimRef={mockRef as RefObject<HTMLDivElement>}
-      />
+      <MemoryRouter>
+        <LeftNavigation
+          isActive
+          leftNavigationAnchorRef={mockRef as RefObject<HTMLAnchorElement>}
+          leftNavigationScrimRef={mockRef as RefObject<HTMLDivElement>}
+        />
+      </MemoryRouter>
     )
 
     const results = await axe(container)
