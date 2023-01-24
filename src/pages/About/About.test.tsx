@@ -1,14 +1,28 @@
 import { render, screen } from "@testing-library/react"
-
-import { axe } from "jest-axe"
-
 import userEvent from "@testing-library/user-event"
+import { axe } from "jest-axe"
+import { MemoryRouter } from "react-router-dom"
 
 import { AboutThisSite } from "./About"
 
 describe("About This Site Component", () => {
+  beforeEach(() => {
+    Object.defineProperty(window, "matchMedia", {
+      writable: true,
+      value: jest.fn().mockImplementation((query) => ({
+        matches: false,
+        media: query,
+        onchange: null,
+      })),
+    })
+  })
+
   it("renders successfully", () => {
-    render(<AboutThisSite />)
+    render(
+      <MemoryRouter>
+        <AboutThisSite />
+      </MemoryRouter>
+    )
 
     const firstTopicNavigationElement = screen.getByText("Design")
 
@@ -16,7 +30,11 @@ describe("About This Site Component", () => {
   })
 
   it("toggles the correct section when corresponding button is pressed", () => {
-    render(<AboutThisSite />)
+    render(
+      <MemoryRouter>
+        <AboutThisSite />
+      </MemoryRouter>
+    )
 
     const designNavigationElement = screen.getByText("Design")
 
@@ -30,7 +48,11 @@ describe("About This Site Component", () => {
   })
 
   it("passes axe automated testing", async () => {
-    const { container } = render(<AboutThisSite />)
+    const { container } = render(
+      <MemoryRouter>
+        <AboutThisSite />
+      </MemoryRouter>
+    )
 
     const results = await axe(container)
 

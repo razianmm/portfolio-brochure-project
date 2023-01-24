@@ -1,9 +1,8 @@
 import { render, screen } from "@testing-library/react"
-
 import { axe } from "jest-axe"
+import { RefObject } from "react"
 
 import { TopNavigation } from "./TopNavigation"
-import { RefObject } from "react"
 
 describe("Top Navigation Component", () => {
   const mockRef = { current: {} }
@@ -13,6 +12,17 @@ describe("Top Navigation Component", () => {
   const mockToggleAnimation = jest.fn()
 
   const mockToggleTheme = jest.fn()
+
+  beforeEach(() => {
+    Object.defineProperty(window, "matchMedia", {
+      writable: true,
+      value: jest.fn().mockImplementation((query) => ({
+        matches: false,
+        media: query,
+        onchange: null,
+      })),
+    })
+  })
 
   it("renders successfully", () => {
     render(

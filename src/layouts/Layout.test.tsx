@@ -1,16 +1,30 @@
 import { render, screen, within } from "@testing-library/react"
-
-import { axe } from "jest-axe"
-
 import userEvent from "@testing-library/user-event"
+import { axe } from "jest-axe"
+import { MemoryRouter } from "react-router-dom"
 
 import { Layout } from "./Layout"
 
 describe("Layout Component", () => {
   const testChild = <p>Test</p>
 
+  beforeEach(() => {
+    Object.defineProperty(window, "matchMedia", {
+      writable: true,
+      value: jest.fn().mockImplementation((query) => ({
+        matches: false,
+        media: query,
+        onchange: null,
+      })),
+    })
+  })
+
   it("renders successfully", () => {
-    render(<Layout>{testChild}</Layout>)
+    render(
+      <MemoryRouter>
+        <Layout>{testChild}</Layout>
+      </MemoryRouter>
+    )
 
     const navigationElement = screen.getAllByRole("navigation")
 
@@ -18,7 +32,11 @@ describe("Layout Component", () => {
   })
 
   it("successfully toggles Left Navigation when toggle button in Top Navigation is clicked", async () => {
-    render(<Layout>{testChild}</Layout>)
+    render(
+      <MemoryRouter>
+        <Layout>{testChild}</Layout>
+      </MemoryRouter>
+    )
 
     const navigationElements = screen.getAllByRole("navigation")
 
@@ -39,7 +57,11 @@ describe("Layout Component", () => {
   })
 
   it("passes axe automated testing", async () => {
-    const { container } = render(<Layout>{testChild}</Layout>)
+    const { container } = render(
+      <MemoryRouter>
+        <Layout>{testChild}</Layout>
+      </MemoryRouter>
+    )
 
     const results = await axe(container)
 

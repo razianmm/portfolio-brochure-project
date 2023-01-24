@@ -1,12 +1,28 @@
 import { render, screen } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import { axe } from "jest-axe"
+import { BrowserRouter } from "react-router-dom"
 
 import { Gallery } from "./Gallery"
 
 describe("Gallery Component", () => {
+  beforeEach(() => {
+    Object.defineProperty(window, "matchMedia", {
+      writable: true,
+      value: jest.fn().mockImplementation((query) => ({
+        matches: false,
+        media: query,
+        onchange: null,
+      })),
+    })
+  })
+
   it("renders successfully", () => {
-    render(<Gallery />)
+    render(
+      <BrowserRouter>
+        <Gallery />
+      </BrowserRouter>
+    )
 
     const selectLabelElement = screen.getByText("Number of options to display:")
 
@@ -14,7 +30,11 @@ describe("Gallery Component", () => {
   })
 
   it("toggles the correct number of items when corresponding value chosen in select", async () => {
-    render(<Gallery />)
+    render(
+      <BrowserRouter>
+        <Gallery />
+      </BrowserRouter>
+    )
 
     const selectElement = await screen.findByRole("combobox")
 
@@ -26,7 +46,11 @@ describe("Gallery Component", () => {
   })
 
   it("passes axe automated testing", async () => {
-    const { container } = render(<Gallery />)
+    const { container } = render(
+      <BrowserRouter>
+        <Gallery />
+      </BrowserRouter>
+    )
 
     const results = await axe(container)
 

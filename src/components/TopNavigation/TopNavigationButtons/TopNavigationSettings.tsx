@@ -1,5 +1,5 @@
 import clsx from "clsx"
-import React, { useCallback, useEffect, useRef, useState } from "react"
+import React, { Fragment, useCallback, useEffect, useRef, useState } from "react"
 
 import { Consumer } from "../../../utils/context"
 
@@ -28,7 +28,6 @@ export const TopNavigationSettings = ({
 
   const handleClickAway = useCallback(
     (event: MouseEvent) => {
-      console.log(menuIsOpen)
 
       if (
         menuIsOpen &&
@@ -91,9 +90,8 @@ export const TopNavigationSettings = ({
             <div className="settings-menu__wrapper settings-menu__radios">
               <p>Theme: </p>
               {themeOptions.map((theme, index) => (
-                <>
+                <Fragment key={index}>
                   <input
-                    key={index}
                     type="radio"
                     id={theme}
                     name="themes"
@@ -105,7 +103,7 @@ export const TopNavigationSettings = ({
                     }}
                   />
                   <label htmlFor={theme}>{theme}</label>
-                </>
+                </Fragment>
               ))}
             </div>
           </div>
