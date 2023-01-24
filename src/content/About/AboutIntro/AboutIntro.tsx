@@ -16,8 +16,14 @@ export const AboutIntro = () => {
         deployment.
       </p>
       <p>
-        The full source for the site is available at the{" "}
-        <a href="#">Github repository link.</a>
+        The full source for the site is available at the
+        <a
+          href="https://github.com/razianmm/portfolio-brochure-project"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Github repository link.
+        </a>
       </p>
       <p>
         Please navigate to each designated section using the tabs above to find
